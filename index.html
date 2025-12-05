@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Luz de Mar | Velas artesanales</title>
+  <meta name="description" content="La Luz de Mar - Velas artesanales hechas a mano con cera natural, aromas únicos y mucha dedicación." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-fondo: #f5f3ef;
+      --color-acento: #e1c4a9;
+      --color-acento-oscuro: #b48b63;
+      --color-texto: #2c2c2c;
+      --color-blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout general */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(245, 243, 239, 0.97);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icono {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--color-acento-oscuro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      background: radial-gradient(circle at 30% 10%, #fff8ec, #e1c4a9);
+    }
+
+    .logo-texto-principal {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.98rem;
+      text-transform: uppercase;
+    }
+
+    .logo-subtitulo {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-acento-oscuro);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid var(--color-acento-oscuro);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background-color: var(--color-acento-oscuro);
+      color: var(--color-blanco);
+    }
+
+    .nav-cta:hover {
+      background-color: #946a44;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-contenido {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-resaltado {
+      display: inline-block;
+      background: linear-gradient(120deg, #e1c4a9, #f6dfc9);
+      padding: 0 0.3em;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-texto {
+      font-size: 0.98rem;
+      max-width: 30rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-datos {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-dato strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+    }
+
+    .btn-primario {
+      background-color: var(--color-acento-oscuro);
+      color: var(--color-blanco);
+      border-color: var(--color-acento-oscuro);
+    }
+
+    .btn-primario:hover {
+      background-color: #946a44;
+    }
+
+    .btn-secundario {
+      background-color: transparent;
+      color: var(--color-texto);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secundario:hover {
+      border-color: var(--color-acento-oscuro);
+    }
+
+    .hero-imagen {
+      position: relative;
+    }
+
+    .hero-tarjeta {
+      background-color: var(--color-blanco);
+      border-radius: 24px;
+      padding: 1.4rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tarjeta img {
+      border-radius: 16px;
+      height: 260px;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .hero-etiqueta {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-precio {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-precio-actual {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-precio-antes {
+      font-size: 0.8rem;
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .hero-nota {
+      font-size: 0.8rem;
+      opacity: 0.75;
+    }
+
+    .hero-sello {
+      position: absolute;
+      right: -18px;
+      bottom: -18px;
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 1px dashed rgba(0, 0, 0, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 1rem;
+      text-align: center;
+      background: radial-gradient(circle at 0 0, #fff8ec, #e1c4a9);
+    }
+
+    /* SECCIONES GENERALES */
+    section {
+      padding: 3rem 0;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    section p.seccion-subtitulo {
+      font-size: 0.9rem;
+      opacity: 0.75;
+      margin-bottom: 2rem;
+      max-width: 34rem;
+    }
+
+    /* COLECCIÓN */
+    .coleccion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    .producto {
+      background-color: var(--color-blanco);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .producto-imagen {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .producto-contenido {
+      padding: 1.1rem 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      flex: 1;
+    }
+
+    .producto-nombre {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .producto-descripcion {
+      font-size: 0.86rem;
+      opacity: 0.8;
+    }
+
+    .producto-detalles {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 0.5rem;
+    }
+
+    .producto-precio {
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .producto-tamaño {
+      font-size: 0.78rem;
+      opacity: 0.7;
+    }
+
+    .producto-pie {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+
+    .producto-eco {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background-color: #f4ebe1;
+    }
+
+    .producto-btn {
+      font-size: 0.8rem;
+      padding: 0.5rem 0.9rem;
+    }
+
+    /* SOBRE MÍ */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .sobre-texto p {
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .sobre-lista {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .sobre-lista li {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sobre-badge {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.7;
+      margin-bottom: 0.6rem;
+    }
+
+    .sobre-tarjeta {
+      background-color: var(--color-blanco);
+      border-radius: 20px;
+      padding: 1.3rem 1.4rem;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+      font-size: 0.9rem;
+    }
+
+    .sobre-autor {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 0.9rem;
+    }
+
+    .sobre-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f3d6b9, #c59b73);
+    }
+
+    .sobre-autor small {
+      display: block;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    /* CONTACTO */
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    form {
+      background-color: var(--color-blanco);
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+    }
+
+    .campo {
+      margin-bottom: 1rem;
+    }
+
+    .campo label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .campo input,
+    .campo textarea,
+    .campo select {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background-color: #fbf9f7;
+    }
+
+    .campo textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .campo small {
+      font-size: 0.72rem;
+      opacity: 0.6;
+    }
+
+    .contacto-info {
+      font-size: 0.9rem;
+    }
+
+    .contacto-info strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .contacto-lista {
+      list-style: none;
+      margin-top: 0.7rem;
+    }
+
+    .contacto-lista li {
+      margin-bottom: 0.4rem;
+    }
+
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .whatsapp-icono {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      padding: 2rem 0 1.5rem;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      margin-top: 2rem;
+    }
+
+    .footer-contenido {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-contenido,
+      .sobre-grid,
+      .contacto-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .hero-contenido {
+        gap: 2rem;
+      }
+
+      .hero-titulo {
+        font-size: 2.1rem;
+      }
+
+      .coleccion-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 55px;
+        right: 1.5rem;
+        background-color: var(--color-blanco);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.2rem;
+        border-radius: 14px;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-links.mostrar {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .coleccion-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 2.4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVEGACIÓN -->
+  <header>
+    <div class="contenedor">
+      <nav class="nav">
+        <a href="#inicio" class="logo">
+          <div class="logo-icono">✨</div>
+          <div>
+            <div class="logo-texto-principal">La Luz de Mar</div>
+            <div class="logo-subtitulo">Velas artesanales</div>
+          </div>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+          ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#coleccion">Colección</a>
+          <a href="#sobre">Sobre mí</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#contacto" class="nav-cta">Hacer pedido</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="inicio">
+    <section class="hero">
+      <div class="contenedor hero-contenido">
+        <div>
+          <div class="hero-resaltado">Hecho a mano con calma</div>
+          <h1 class="hero-titulo">
+            Velas artesanales para encender momentos que se quedan.
+          </h1>
+          <p class="hero-texto">
+            En <strong>La Luz de Mar</strong> cada vela está hecha a mano con cera vegetal, mechas de algodón
+            y fragancias suaves inspiradas en el mar, la naturaleza y el hogar.
+          </p>
+
+          <div class="hero-datos">
+            <div class="hero-dato">
+              <strong>100%</strong>
+              Cera vegetal
+            </div>
+            <div class="hero-dato">
+              <strong>Hecho</strong>
+              Bajo pedido
+            </div>
+            <div class="hero-dato">
+              <strong>Envíos</strong>
+              A toda España
+            </div>
+          </div>
+
+          <div class="hero-botones">
+            <a href="#coleccion" class="btn btn-primario">Ver colección</a>
+            <a href="#contacto" class="btn btn-secundario">Hacer un pedido</a>
+          </div>
+        </div>
+
+        <div class="hero-imagen">
+          <div class="hero-tarjeta">
+            <span class="hero-etiqueta">Colección Mar</span>
+            <!-- Aquí puedes cambiar la imagen por una tuya -->
+            <img src="https://images.pexels.com/photos/6954142/pexels-photo-6954142.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Velas artesanales La Luz de Mar">
+            <div class="hero-precio">
+              <div>
+                <div>Caja de 3 velas aromáticas</div>
+                <div class="hero-precio-actual">24,90 €</div>
+              </div>
+              <div class="hero-precio-antes">29,90 €</div>
+            </div>
+            <p class="hero-nota">
+              Aromas suaves de algodón limpio, sal marina y vainilla. Ideal para regalar o crear ambiente en casa.
+            </p>
+            <div class="hero-sello">
+              Hecho a mano en pequeños lotes
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLECCIÓN -->
+    <section id="coleccion">
+      <div class="contenedor">
+        <h2>Colección de velas</h2>
+        <p class="seccion-subtitulo">
+          Elige entre aromas inspirados en el mar, la naturaleza y los momentos tranquilos.
+          Todas las velas se pueden personalizar para regalos, eventos y detalles especiales.
+        </p>
+
+        <div class="coleccion-grid">
+          <!-- Producto 1 -->
+          <article class="producto">
+            <div class="producto-imagen"
+                 style="background-image:url('https://images.pexels.com/photos/6954121/pexels-photo-6954121.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            </div>
+            <div class="producto-contenido">
+              <h3 class="producto-nombre">Brisa de Mar</h3>
+              <p class="producto-descripcion">
+                Aroma fresco con notas de sal marina, algodón limpio y un toque cítrico suave.
+              </p>
+              <div class="producto-detalles">
+                <span class="producto-precio">14,90 €</span>
+                <span class="producto-tamaño">150 ml · 30 h de luz</span>
+              </div>
+              <div class="producto-pie">
+                <span class="producto-eco">
+                  ♻ Cera vegetal · Vegana
+                </span>
+                <button class="btn btn-primario producto-btn" data-producto="Brisa de Mar">
+                  Me interesa
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 2 -->
+          <article class="producto">
+            <div class="producto-imagen"
+                 style="background-image:url('https://images.pexels.com/photos/6724410/pexels-photo-6724410.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            </div>
+            <div class="producto-contenido">
+              <h3 class="producto-nombre">Bosque Calmado</h3>
+              <p class="producto-descripcion">
+                Mezcla cálida de sándalo, cedro y un toque de ámbar para tardes de manta y té.
+              </p>
+              <div class="producto-detalles">
+                <span class="producto-precio">15,90 €</span>
+                <span class="producto-tamaño">180 ml · 35 h de luz</span>
+              </div>
+              <div class="producto-pie">
+                <span class="producto-eco">
+                  ✨ Mecha de algodón
+                </span>
+                <button class="btn btn-primario producto-btn" data-producto="Bosque Calmado">
+                  Me interesa
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="producto">
+            <div class="producto-imagen"
+                 style="background-image:url('https://images.pexels.com/photos/6323185/pexels-photo-6323185.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            </div>
+            <div class="producto-contenido">
+              <h3 class="producto-nombre">Vainilla & Algodón</h3>
+              <p class="producto-descripcion">
+                Dulce, suave y envolvente. Ideal para crear un ambiente acogedor en el dormitorio o salón.
+              </p>
+              <div class="producto-detalles">
+                <span class="producto-precio">13,90 €</span>
+                <span class="producto-tamaño">150 ml · 28 h de luz</span>
+              </div>
+              <div class="producto-pie">
+                <span class="producto-eco">
+                  🕯 Envase de cristal reutilizable
+                </span>
+                <button class="btn btn-primario producto-btn" data-producto="Vainilla & Algodón">
+                  Me interesa
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre">
+      <div class="contenedor sobre-grid">
+        <div class="sobre-texto">
+          <div class="sobre-badge">La Luz de Mar</div>
+          <h2>Velas con historia, no de fábrica.</h2>
+          <p>
+            La Luz de Mar nace del amor por los pequeños rituales: encender una vela al final del día,
+            leer un libro con luz cálida o acompañar una cena especial con una llama suave.
+          </p>
+          <p>
+            Trabajo con <strong>cera vegetal</strong>, fragancias de alta calidad y mechas de algodón,
+            cuidando cada detalle a mano desde mi taller.
+          </p>
+          <ul class="sobre-lista">
+            <li>• Producción en pequeños lotes</li>
+            <li>• Posibilidad de personalizar etiquetas y mensajes</li>
+            <li>• Ideal para bodas, regalos de empresa y detalles especiales</li>
+          </ul>
+        </div>
+
+        <div class="sobre-tarjeta">
+          <p>
+            “Creo que una vela no es solo un objeto decorativo; es una excusa para frenar, respirar
+            y crear un momento solo para ti o para compartir con quien quieres.”
+          </p>
+          <div class="sobre-autor">
+            <div class="sobre-avatar"></div>
+            <div>
+              <strong>Mar</strong>
+              <small>Artesana de velas · Fundadora de La Luz de Mar</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / PEDIDOS -->
+    <section id="contacto">
+      <div class="contenedor contacto-grid">
+        <div>
+          <h2>Haz tu pedido o pregunta</h2>
+          <p class="seccion-subtitulo">
+            Cuéntame qué vela te gusta, si es para ti o para regalar, y si necesitas
+            algún detalle especial (mensaje, colores, cantidad, etc.).
+          </p>
+
+          <form id="formularioPedido">
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            </div>
+
+            <div class="campo">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tucorreo@email.com">
+            </div>
+
+            <div class="campo">
+              <label for="producto">¿Qué vela te interesa?</label>
+              <select id="producto" name="producto">
+                <option value="">Elige una opción</option>
+                <option value="Brisa de Mar">Brisa de Mar</option>
+                <option value="Bosque Calmado">Bosque Calmado</option>
+                <option value="Vainilla & Algodón">Vainilla & Algodón</option>
+                <option value="Lote surtido">Lote surtido</option>
+                <option value="Otro / Personalizado">Otro / Personalizado</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntame cantidades, fecha aproximada, si es para un evento, etc."></textarea>
+              <small>No es una compra automática, te responderé por email para concretar detalles.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primario">
+              Enviar consulta
+            </button>
+            <p id="mensajeForm" style="font-size:0.85rem; margin-top:0.6rem; display:none;"></p>
+          </form>
+        </div>
+
+        <div class="contacto-info">
+          <strong>También puedes escribirme directamente:</strong>
+          <ul class="contacto-lista">
+            <li>Email: <a href="mailto:info@laluzdemar.com">info@laluzdemar.com</a></li>
+            <!-- Cambia el número de WhatsApp por el tuyo -->
+            <li>WhatsApp: <a href="https://wa.me/34123456789" target="_blank">+34 123 45 67 89</a></li>
+            <li>Instagram: <a href="https://www.instagram.com" target="_blank">@laluzdemar</a> (ejemplo)</li>
+          </ul>
+
+          <div class="whatsapp">
+            <div class="whatsapp-icono">💬</div>
+            <div>
+              Escríbeme por WhatsApp para pedidos urgentes, dudas rápidas o fotos de ejemplo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="contenedor footer-contenido">
+      <div>© <span id="anioActual"></span> La Luz de Mar · Velas artesanales hechas a mano.</div>
+      <div class="footer-links">
+        <span>Hecho con calma y luz ✨</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menú responsive
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('mostrar');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (móvil)
+    navLinks.querySelectorAll('a').forEach(enlace => {
+      enlace.addEventListener('click', () => {
+        navLinks.classList.remove('mostrar');
+      });
+    });
+
+    // Año actual en el footer
+    document.getElementById('anioActual').textContent = new Date().getFullYear();
+
+    // Botones "Me interesa" rellenan el campo producto
+    const botonesProducto = document.querySelectorAll('.producto-btn');
+    const selectProducto = document.getElementById('producto');
+
+    botonesProducto.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const producto = boton.getAttribute('data-producto');
+        selectProducto.value = producto;
+        // Hacemos scroll suave al formulario
+        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Simulación envío de formulario (sin backend aún)
+    const formulario = document.getElementById('formularioPedido');
+    const mensajeForm = document.getElementById('mensajeForm');
+
+    formulario.addEventListener('submit', (e) => {
+      e.preventDefault();
+      mensajeForm.style.display = 'block';
+      mensajeForm.textContent = 'Gracias por tu mensaje. En cuanto tenga tu pedido revisado, te contestaré por email. (Aquí se conectaría el formulario a tu correo o tienda online).';
+      formulario.reset();
+    });
+  </script>
+</body>
+</html>
